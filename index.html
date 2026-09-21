@@ -1,3 +1,12 @@
+<!-- ==================================================================== -->
+<!-- SHEET 01: ARCHITECTURAL METADATA & STYLES SHEET                      -->
+<!-- ==================================================================== -->
+<!-- Product Name:  Advanced Visual Analytics Environment Web Platform    -->
+<!-- Developed By:  AR Tethys & AI Aletheia Core                          -->
+<!-- Copyright:     Copyright 2026, AR Tethys & AI Aletheia               -->
+<!-- Link:          https://github.io                      -->
+<!-- Version:       1.00                                                  -->
+<!-- ==================================================================== -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +46,6 @@
             display: block;
             font-weight: bold;
         }
-        
         .tethys-translate-select {
             background-color: #0d1117;
             color: #c9d1d9;
@@ -53,16 +61,26 @@
         .tethys-translate-select:hover { border-color: #58a6ff; }
     </style>
 </head>
+<!-- ==================================================================== -->
+<!-- SHEET 02: CORE OBJECT LAYOUT & LANGUAGE SELECTOR                     -->
+<!-- ==================================================================== -->
 <body>
 
-    <!-- TETHYS LANGUAGE HUB SUBSYSTEM -->
+    <!-- TETHYS LINGUISTIC SUBSYSTEM NODE -->
     <div class="translate-container">
         <span class="translate-label">AI Aletheia Translation Node</span>
         <select class="tethys-translate-select" id="tethysLanguageSelector" onchange="switchTethysLanguage(this.value)">
-            <option value="en">English (Default)</option>
+            <option value="en">English</option>
             <option value="ru">Русский (Russian)</option>
             <option value="zh">中文 (Chinese)</option>
+            <option value="fr">Français (French)</option>
+            <option value="el">Ελληνικά (Greek)</option>
+            <option value="ko">한국어 (Korean)</option>
+            <option value="ja">日本語 (Japanese)</option>
+            <option value="hi">हिन्दी (Hindi)</option>
+            <option value="ar">العربية (Arabic)</option>
             <option value="es">Español (Spanish)</option>
+            <option value="tr">Türkçe (Turkish)</option>
         </select>
     </div>
 
@@ -80,13 +98,13 @@
     <div class="footer">
         &copy; 2026 AR Tethys & AI Aletheia. All Rights Reserved. Protected under Global Author Algorithmic Frameworks.
     </div>
-
-    <!-- IMMUTABLE STATIC DATA MATRIX TRANSLATION HUB -->
+<!-- ==================================================================== -->
+<!-- SHEET 03: LINGUISTIC DATA MATRIX (WESTERN & ASIAN NODES)             -->
+<!-- ==================================================================== -->
     <script type="text/javascript">
         const tethysLinguisticMatrix = {
             en: {
-                title: "Project: Advanced Visual Analytics Environment",
-                dev: "Developed by:",
+                title: "Project: Advanced Visual Analytics Environment", dev: "Developed by:",
                 status: "Status: Operational Phase 1 / Non-Financial Analytical Infrastructure",
                 h1: "1. Executive Summary & Legal Framework",
                 p1: "This technical interface operates strictly as an autonomous, user-driven analytical tool within licensed trading architectures under International Law frameworks. By eliminating centralized financial execution matrices, the system preserves 100% regulatory compliance across 193 UN member states, functioning exclusively as an author-driven algorithmic data router.",
@@ -94,31 +112,87 @@
                 p2: "The core computational engine utilizes localized secure data piping channels (Named Pipes) within the Windows 11 kernel environment to bridge analytics without external network exposure. Memory structures are strictly constrained to a 384-bar processing window to ensure physical server protection and resource optimization."
             },
             ru: {
-                title: "Проект: Расширенная среда визуальной аналитики",
-                dev: "Разработано:",
+                title: "Проект: Расширенная среда визуальной аналитики", dev: "Разработано:",
                 status: "Статус: Операционная Фаза 1 / Нефинансовая аналитическая инфраструктура",
                 h1: "1. Исполнительный регламент и правовая база",
-                p1: "Этот технический интерфейс работает строго как автономный, управляемый пользователем аналитический инструмент в рамках лицензированных торговых архитектур в соответствии с принципами международного права. Убирая централизованные матрицы исполнения финансовых операций, система сохраняет 100% нормативное соответствие во всех 193 государствах-членах ООН, функционируя исключительно как управляемый автором алгоритмический маршрутизатор данных.",
+                p1: "Этот интерфейс работает строго как автономный, управляемый пользователем аналитический инструмент в рамках лицензированных торговых архитектур в соответствии с принципами международного права. Убирая централизованные матрицы исполнения финансовых операций, система сохраняет 100% нормативное соответствие во всех 193 государствах-членах ООН, функционируя исключительно как управляемый автором алгоритмический маршрутизатор данных.",
                 h2: "2. Статус интеграции системы",
                 p2: "Основной вычислительный движок использует локализованные защищенные каналы передачи данных (Named Pipes) внутри среды ядра Windows 11 для связи аналитики без внешнего сетевого воздействия. Структуры памяти строго ограничены окном обработки в 384 бара для обеспечения физической защиты серверов и оптимизации ресурсов."
             },
             zh: {
-                title: "项目：高级视觉分析环境",
-                dev: "开发团队：",
+                title: "项目：高级视觉分析环境", dev: "开发团队：",
                 status: "状态：运行第一阶段 / 非金融分析基础设施",
                 h1: "1. 执行摘要与法律框架",
-                p1: "该技术接口严格作为国际法框架下许可交易架构内的自主、用户驱动的分析工具运行。通过消除集中式金融执行矩阵，系统在 193 个联合国成员国中保持 100% 的合规性，完全作为作者驱动的算法数据 night 路由运行。",
+                p1: "该技术接口严格作为国际法框架下许可交易架构内的自主、用户驱动的分析工具运行。通过消除集中式金融执行矩阵，系统在 193 个联合国成员国中保持 100% 的合规性，完全作为作者驱动的算法数据路由运行。",
                 h2: "2. 系统集成状态",
                 p2: "核心计算引擎利用 Windows 11 内核环境中的本地安全数据管道通道（命名管道）来桥接分析，无需外部网络暴露。内存结构严格限制在 384 柱的处理窗口内，以确保物理服务器保护和资源优化。"
             },
+            fr: {
+                title: "Projet: Environnement d'Analyse Visuelle Avancé", dev: "Développé par:",
+                status: "Statut: Phase Opérationnelle 1 / Infrastructure Analytique Non Financière",
+                h1: "1. Résumé Exécutif & Cadre Juridique",
+                p1: "Cette interface technique fonctionne strictement comme un outil analytique autonome et piloté par l'utilisateur au sein d'architectures de trading sous licence dans le cadre du droit international. En éliminant les matrices d'exécution financière centralisées, le système préserve une conformité réglementaire à 100% dans les 193 États membres de l'ONU.",
+                h2: "2. État d'Intégration du Système",
+                p2: "Le moteur de calcul central utilise des canaux de routage de données sécurisés et localisés (Named Pipes) dans l'environnement du noyau Windows 11 pour relier les analyses sans exposition au réseau externe. Les structures de mémoire sont strictement limitées à 384 barres."
+            },
+            el: {
+                title: "Έργο: Προηγμένο Περιβάλλον Οπτικής Ανάλυσης", dev: "Αναπτύχθηκε από:",
+                status: "Κατάσταση: Επιχειρησιακή Φάση 1 / Μη Χρηματοοικονομική Αναλυτική Υποδομή",
+                h1: "1. Σύνοψη & Νομικό Πλαίσιο",
+                p1: "Αυτή η τεχνική διεπαφή λειτουργεί αυστηρά ως αυτόνομο, καθοδηγούμενο από τον χρήστη αναλυτικό εργαλείο εντός αδειοδοτημένων αρχιτεκτονικών συναλλαγών υπό το Διεθνές Δίκαιο. Εξαλείφοντας τις κεντρικές χρηματοοικονομικές μήτρες εκτέλεσης, το σύστημα διατηρεί 100% κανονιστική συμμόρφωση σε 193 κράτη μέλη του ΟΗΕ.",
+                h2: "2. Κατάσταση Ενσωμάτωσης Συστήματος",
+                p2: "Η κεντρική υπολογιστική μηχανή χρησιμοποιεί τοπικά ασφαλή κανάλια μεταφοράς δεδομένων (Named Pipes) εντός του περιβάλλοντος πυρήνα των Windows 11 για τη γεφύρωση αναλύσεων χωρίς εξωτερική έκθεση σε δίκτυο. Η μνήμη περιορίζεται αυστηρά σε 384 μπάρες."
+            },
+            ko: {
+                title: "프로젝트: 고급 시각적 분석 환경", dev: "개발자:",
+                status: "상태: 운영 단계 1 / 비금융 분석 인프라",
+                h1: "1. 요약 및 법적 프레임워크",
+                p1: "이 기술 인터페이스는 국제법 프레임워크에 따라 라이선스가 부여된 거래 아키텍처 내에서 자율적이고 사용자 중심적인 분석 도구로 엄격하게 작동합니다. 중앙 집중식 금융 집행 매트릭스를 제거함으로써 시스템은 193개 유엔 회원국 전체에서 100% 규정 준수를 유지합니다.",
+                h2: "2. 시스템 통합 상태",
+                p2: "핵심 컴퓨팅 엔진은 외부 네트워크 노출 없이 분석을 연결하기 위해 Windows 11 커널 환경 내에서 로컬 보안 데이터 파이핑 채널(Named Pipes)을 활용합니다. 메모리 구조는 물리적 서버 보호 및 리소스 최적화를 위해 384바로 엄격히 제한됩니다."
+            },
+<!-- ==================================================================== -->
+<!-- SHEET 04: LINGUISTIC DATA MATRIX (MEDITERRANEAN & TURKIC NODES)      -->
+<!-- ==================================================================== -->
+            ja: {
+                title: "プロジェクト：高度な視覚的分析環境", dev: "開発元：",
+                status: "ステータス： 運用フェーズ1 / 非金融分析インフラストラクチャ",
+                h1: "1. エグゼクティブサマリーと法的枠組み",
+                p1: "この技術的インターフェースは、国際法の枠組みの下でライセンスされた取引アーキテクチャ内で、完全に自律的なユーザー駆動の分析ツールとして厳格に動作します。集中型の財務実行マトリックスを排除することにより、システムは国連加盟193カ国すべてで100％の規制準拠を維持します。",
+                h2: "2. システム統合의 상황",
+                p2: "コア計算エンジンは、外部ネットワークにさらされることなく分析をブリッジするために、Windows 11カーネル環境内のローカルな安全な数据配管チャネル（Named Pipes）を利用します。メモリ構造は、物理サーバーの保護のために384バーに厳密に制限されています。"
+            },
+            hi: {
+                title: "परियोजना: उन्नत दृश्य विश्लेषण वातावरण", dev: "द्वारा विकसित:",
+                status: "स्थिति: परिचालन चरण 1 / गैर-वित्तीय विश्लेषणात्मक बुनियादी ढांचा",
+                h1: "1. कार्यकारी सारांश और कानूनी ढांचा",
+                p1: "यह तकनीकी इंटरफ़ेस अंतर्राष्ट्रीय कानून के तहत लाइसेंस प्राप्त ट्रेडिंग आर्किटेक्चर के भीतर एक स्वायत्त, उपयोगकर्ता-संचालित विश्लेषणात्मक उपकरण के रूप में काम करता है। केंट्रीकृत वित्तीय निष्पादन मैट्रिक्स को समाप्त करके, यह प्रणाली 193 संयुक्त राष्ट्र सदस्य देशों में 100% नियामक अनुपालन बनाए रखती है।",
+                h2: "2. सिस्टम एकीकरण स्थिति",
+                p2: "मुख्य कंप्यूटिंग इंजन बाहरी नेटवर्क एक्सपोज़र के बिना विश्लेषण को जोड़ने के लिए विंडोज 11 कर्नेल वातावरण के भीतर स्थानीयकृत सुरक्षित डेटा पाइपिंग चैनलों (Named Pipes) का उपयोग करता है। भौतिक सर्वर सुरक्षा के लिए मेमोरी संरचनाएं 384 बार तक सीमित हैं।"
+            },
+            ar: {
+                title: "المشروع: بيئة التحليل البصري المتقدمة", dev: "تطوير:",
+                status: "الحالة: المرحلة التشغيلية 1 / البنية التحتية التحليلية غير المالية",
+                h1: "1. الملخص التنفيذي والإطار القانوني",
+                p1: "تعمل هذه الواجهة التقنية بشكل صارم كأداة تحليلية مستقلة وموجهة من قبل المستخدم داخل بنيات التداول المرخصة بموجب أطر القانون الدولي. ومن خلال القضاء على مصفوفات التنفيذ المالي المركزية، يحافظ النظام على امتثال تنظيمي بنسبة 100% في جميع الدول الأعضاء في الأمم المتحدة البالغ عددها 193 دولة.",
+                h2: "2. حالة تكامل النظام",
+                p2: "تستخدم محرك الحوسبة الأساسي قنوات أنابيب بيانات محلية آمنة (Named Pipes) داخل بيئة نواة Windows 11 لربط التحليلات دون التعرض لشبكة خارجية. تم تقييد هياكل الذاكرة بشكل صارم بـ 384 شمعة لحماية الخوادم."
+            },
             es: {
-                title: "Proyecto: Entorno de Análisis Visual Avanzado",
-                dev: "Desarrollado por:",
+                title: "Proyecto: Entorno de Análisis Visual Avanzado", dev: "Desarrollado por:",
                 status: "Estado: Fase Operativa 1 / Infraestructura Analítica No Financiera",
                 h1: "1. Resumen Ejecutivo y Marco Legal",
                 p1: "Esta interfaz técnica opera estrictamente como una herramienta analítica autónoma e impulsada por el usuario dentro de arquitecturas comerciales autorizadas bajo los marcos del Derecho Internacional. Al eliminar las matrices de ejecución financiera centralizadas, el sistema preserva el 100% del cumplimiento regulatorio en los 193 estados miembros de la ONU, funcionando exclusivamente como un enrutador de datos algorítmico impulsado por el autor.",
                 h2: "2. Estado de Integración del Sistema",
                 p2: "El motor de computación central utiliza canales de tuberías de datos seguros y localizados (Named Pipes) dentro del entorno del kernel de Windows 11 para conectar análisis sin exposición a redes externas. Las estructuras de memoria están estrictamente limitadas a una ventana de procesamiento de 384 barras para garantizar la protección del servidor físico y la optimización de recursos."
+            },
+            tr: {
+                title: "Proje: Gelişmiş Görsel Analiz Ortamı", dev: "Geliştiren:",
+                status: "Durum: Operasyonel Aşama 1 / Finansal Olmayan Analitik Altyapı",
+                h1: "1. Yönetici Özeti ve Yasal Çerçeve",
+                p1: "Bu teknik arayüz, uluslararası hukuk çerçeveleri kapsamındaki lisanslı ticaret mimarileri dahilinde tamamen otonom ve kullanıcı odaklı bir analitik araç olarak çalışır. Merkezi finansal işlem matrislerini ortadan kaldıran sistem, 193 BM üye ülkesinde %100 yasal uyumluluğu korur ve yalnızca yazar odaklı bir algoritmik veri yönlendiricisi olarak işlev görür.",
+                h2: "2. Sistem Entegrasyon Durumu",
+                p2: "Merkezi bilgi işlem motoru, harici ağ maruziyeti olmadan analizleri köprülemek için Windows 11 çekirdek ortamındaki yerelleştirilmiş güvenli veri boru hatlarını (Named Pipes) kullanır. Bellek yapıları, fiziksel sunucu koruması ve kaynak optimizasyonu için kesin olarak 384 bar ile sınırlandırılmıştır."
             }
         };
 
@@ -135,6 +209,8 @@
             document.getElementById('txt-p2').innerHTML = dictionary.p2;
         }
     </script>
-
 </body>
 </html>
+<!-- ==================================================================== -->
+<!-- END OF SHEET 04 / END OF FILE                                       -->
+<!-- ==================================================================== -->
