@@ -23,7 +23,7 @@
         .translate-container {
             background: #161b22;
             border: 1px solid #30363d;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             display: inline-block;
             margin-bottom: 30px;
@@ -36,9 +36,19 @@
             color: #8b949e;
             margin-bottom: 10px;
             display: block;
+            font-weight: bold;
         }
-        .goog-te-banner-frame.skiptranslate { display: none !important; }
-        body { top: 0px !important; }
+        
+        /* Stylization adjustments for Google standard select block */
+        .goog-te-combo {
+            background-color: #0d1117 !important;
+            color: #c9d1d9 !important;
+            border: 1px solid #30363d !important;
+            padding: 6px !important;
+            border-radius: 4px !important;
+            font-family: 'Consolas', monospace !important;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -46,6 +56,7 @@
     <!-- TETHYS LANGUAGE HUB SUBSYSTEM -->
     <div class="translate-container">
         <span class="translate-label">AI Aletheia Translation Node</span>
+        <!-- Google core execution layout will inject the working select tag inside this div -->
         <div id="google_translate_element"></div>
     </div>
 
@@ -68,9 +79,9 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
+                // Explicitly defining the 10 core global strategic languages
                 includedLanguages: 'en,ru,zh-CN,fr,el,ko,ja,hi,ar,es',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: false
+                autoDisplay: true
             }, 'google_translate_element');
         }
     </script>
