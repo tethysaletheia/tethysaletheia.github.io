@@ -55,10 +55,6 @@
         .tethys-translate-select:hover {
             border-color: #58a6ff;
         }
-        /* Completely hide default corporate top panels to protect visual layout */
-        .goog-te-banner-frame, .goog-te-banner-frame.skiptranslate, .goog-te-gadget-icon { display: none !important; }
-        body { top: 0px !important; }
-        .skiptranslate { display: none !important; }
     </style>
 </head>
 <body>
@@ -66,11 +62,11 @@
     <!-- TETHYS LANGUAGE HUB SUBSYSTEM -->
     <div class="translate-container">
         <span class="translate-label">AI Aletheia Translation Node</span>
-        <select class="tethys-translate-select" id="tethysLanguageSelector">
+        <select class="tethys-translate-select" id="tethysLanguageSelector" onchange="translatePageContent(this.value)">
             <option value="">Select Language...</option>
             <option value="en">English (Default)</option>
             <option value="ru">Русский (Russian)</option>
-            <option value="zh-CN">中文 (Chinese)</option>
+            <option value="zh">中文 (Chinese)</option>
             <option value="fr">Français (French)</option>
             <option value="el">Ελληνικά (Greek)</option>
             <option value="ko">한국어 (Korean)</option>
@@ -81,15 +77,18 @@
         </select>
     </div>
 
-    <h1>Project: Advanced Visual Analytics Environment</h1>
-    <p>Developed by: <span class="brand">AR Tethys & AI Aletheia Core</span></p>
-    <p>Status: Operational Phase 1 / Non-Financial Analytical Infrastructure</p>
+    <!-- TRANSLATABLE CORE CONTAINER -->
+    <div id="tethysContentArea">
+        <h1 data-origin="Project: Advanced Visual Analytics Environment">Project: Advanced Visual Analytics Environment</h1>
+        <p>Developed by: <span class="brand">AR Tethys & AI Aletheia Core</span></p>
+        <p>Status: Operational Phase 1 / Non-Financial Analytical Infrastructure</p>
 
-    <h2>1. Executive Summary & Legal Framework</h2>
-    <p>This technical interface operates strictly as an autonomous, user-driven analytical tool within licensed trading architectures under International Law frameworks. By eliminating centralized financial execution matrices, the system preserves 100% regulatory compliance across 193 UN member states, functioning exclusively as an author-driven algorithmic data router.</p>
+        <h2 data-origin="1. Executive Summary & Legal Framework">1. Executive Summary & Legal Framework</h2>
+        <p data-origin="This technical interface operates strictly as an autonomous, user-driven analytical tool within licensed trading architectures under International Law frameworks. By eliminating centralized financial execution matrices, the system preserves 100% regulatory compliance across 193 UN member states, functioning exclusively as an author-driven algorithmic data router.">This technical interface operates strictly as an autonomous, user-driven analytical tool within licensed trading architectures under International Law frameworks. By eliminating centralized financial execution matrices, the system preserves 100% regulatory compliance across 193 UN member states, functioning exclusively as an author-driven algorithmic data router.</p>
 
-    <h2>2. System Integration Status</h2>
-    <p>The core computational engine utilizes localized secure data piping channels (Named Pipes) within the Windows 11 kernel environment to bridge analytics without external network exposure. Memory structures are strictly constrained to a 384-bar processing window to ensure physical server protection and resource optimization.</p>
+        <h2 data-origin="2. System Integration Status">2. System Integration Status</h2>
+        <p data-origin="The core computational engine utilizes localized secure data piping channels (Named Pipes) within the Windows 11 kernel environment to bridge analytics without external network exposure. Memory structures are strictly constrained to a 384-bar processing window to ensure physical server protection and resource optimization.">The core computational engine utilizes localized secure data piping channels (Named Pipes) within the Windows 11 kernel environment to bridge analytics without external network exposure. Memory structures are strictly constrained to a 384-bar processing window to ensure physical server protection and resource optimization.</p>
+    </div>
 
     <div class="footer">
         &copy; 2026 AR Tethys & AI Aletheia. All Rights Reserved. Protected under Global Author Algorithmic Frameworks.
@@ -97,48 +96,37 @@
 
     <!-- PURE DECENTRALIZED RUNTIME INTERPOLATION TRANSLATION ROUTING -->
     <script type="text/javascript">
-        // Instantiates secure automated dynamic script rendering engine
-        (function injectTethysTranslationEngine() {
-            var googleElementDiv = document.createElement('div');
-            googleElementDiv.id = 'google_translate_element';
-            googleElementDiv.style.display = 'none';
-            document.body.appendChild(googleElementDiv);
-
-            window.googleTranslateElementInit = function() {
-                new google.translate.TranslateElement({
-                    pageLanguage: 'en',
-                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                    autoDisplay: false
-                }, 'google_translate_element');
-            };
-
-            var scriptNode = document.createElement('script');
-            scriptNode.type = 'text/javascript';
-            scriptNode.src = '//://google.com';
-            document.head.appendChild(scriptNode);
-        })();
-
-        // Robust action listener node bridging hardware clicks directly to execution matrices
-        document.getElementById('tethysLanguageSelector').addEventListener('change', function() {
-            var languageCode = this.value;
-            if (!languageCode) return;
-
-            // Direct runtime injection targeting internal frame combo components
-            var nativeSelectCombo = document.querySelector('.goog-te-combo');
-            if (nativeSelectCombo) {
-                nativeSelectCombo.value = languageCode;
-                nativeSelectCombo.dispatchEvent(new Event('change'));
-            } else {
-                // Secondary fail-safe mechanism loop if system lag encounters execution delays
-                setTimeout(function() {
-                    var retrySelectCombo = document.querySelector('.goog-te-combo');
-                    if (retrySelectCombo) {
-                        retrySelectCombo.value = languageCode;
-                        retrySelectCombo.dispatchEvent(new Event('change'));
+        async function translatePageContent(targetLang) {
+            if (!targetLang) return;
+            
+            const elementsToTranslate = document.querySelectorAll('#tethysContentArea [data-origin]');
+            
+            for (let element of elementsToTranslate) {
+                const originalText = element.getAttribute('data-origin');
+                
+                if (targetLang === 'en') {
+                    element.innerHTML = originalText;
+                    continue;
+                }
+                
+                element.innerHTML = "Waking up AI Aletheia Node...";
+                
+                try {
+                    // Open matrix API route routing directly via autonomous memory node
+                    const apiURL = `https://translated.net{encodeURIComponent(originalText)}&langpair=en|${targetLang}`;
+                    const response = await fetch(apiURL);
+                    const data = await response.json();
+                    
+                    if (data && data.responseData) {
+                        element.innerHTML = data.responseData.translatedText;
+                    } else {
+                        element.innerHTML = originalText;
                     }
-                }, 300);
+                } catch (error) {
+                    element.innerHTML = originalText;
+                }
             }
-        });
+        }
     </script>
 
 </body>
