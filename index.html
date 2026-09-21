@@ -39,15 +39,21 @@
             font-weight: bold;
         }
         
-        /* Stylization adjustments for Google standard select block */
-        .goog-te-combo {
-            background-color: #0d1117 !important;
-            color: #c9d1d9 !important;
-            border: 1px solid #30363d !important;
-            padding: 6px !important;
-            border-radius: 4px !important;
-            font-family: 'Consolas', monospace !important;
+        /* Custom Native Dropdown Styling Matching Windows 11 Fluent Design */
+        .tethys-translate-select {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            border: 1px solid #30363d;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9em;
             cursor: pointer;
+            outline: none;
+            width: 200px;
+        }
+        .tethys-translate-select:hover {
+            border-color: #58a6ff;
         }
     </style>
 </head>
@@ -56,33 +62,57 @@
     <!-- TETHYS LANGUAGE HUB SUBSYSTEM -->
     <div class="translate-container">
         <span class="translate-label">AI Aletheia Translation Node</span>
-        <!-- Google core execution layout will inject the working select tag inside this div -->
-        <div id="google_translate_element"></div>
+        <!-- Native, secure and clean dropdown menu for strategic global languages -->
+        <select class="tethys-translate-select" id="tethysLanguageSelector" onchange="executeAletheiaTranslation(this.value)">
+            <option value="en">English (Default)</option>
+            <option value="ru">Русский (Russian)</option>
+            <option value="zh-CN">中文 (Chinese)</option>
+            <option value="fr">Français (French)</option>
+            <option value="el">Ελληνικά (Greek)</option>
+            <option value="ko">한국어 (Korean)</option>
+            <option value="ja">日本語 (Japanese)</option>
+            <option value="hi">हिन्दी (Hindi)</option>
+            <option value="ar">العربية (Arabic)</option>
+            <option value="es">Español (Spanish)</option>
+        </select>
     </div>
 
-    <h1>Project: Advanced Visual Analytics Environment</h1>
-    <p>Developed by: <span class="brand">AR Tethys & AI Aletheia Core</span></p>
-    <p>Status: Operational Phase 1 / Non-Financial Analytical Infrastructure</p>
+    <div id="tethys_web_content">
+        <h1>Project: Advanced Visual Analytics Environment</h1>
+        <p>Developed by: <span class="brand">AR Tethys & AI Aletheia Core</span></p>
+        <p>Status: Operational Phase 1 / Non-Financial Analytical Infrastructure</p>
 
-    <h2>1. Executive Summary & Legal Framework</h2>
-    <p>This technical interface operates strictly as an autonomous, user-driven analytical tool within licensed trading architectures under International Law frameworks. By eliminating centralized financial execution matrices, the system preserves 100% regulatory compliance across 193 UN member states, functioning exclusively as an author-driven algorithmic data router.</p>
+        <h2>1. Executive Summary & Legal Framework</h2>
+        <p>This technical interface operates strictly as an autonomous, user-driven analytical tool within licensed trading architectures under International Law frameworks. By eliminating centralized financial execution matrices, the system preserves 100% regulatory compliance across 193 UN member states, functioning exclusively as an author-driven algorithmic data router.</p>
 
-    <h2>2. System Integration Status</h2>
-    <p>The core computational engine utilizes localized secure data piping channels (Named Pipes) within the Windows 11 kernel environment to bridge analytics without external network exposure. Memory structures are strictly constrained to a 384-bar processing window to ensure physical server protection and resource optimization.</p>
+        <h2>2. System Integration Status</h2>
+        <p>The core computational engine utilizes localized secure data piping channels (Named Pipes) within the Windows 11 kernel environment to bridge analytics without external network exposure. Memory structures are strictly constrained to a 384-bar processing window to ensure physical server protection and resource optimization.</p>
+    </div>
 
     <div class="footer">
         &copy; 2026 AR Tethys & AI Aletheia. All Rights Reserved. Protected under Global Author Algorithmic Frameworks.
     </div>
 
-    <!-- GEOMETRIC CORE LANGUAGE MATRICES ROUTING SCRIPT -->
+    <!-- GOOGLE CORE TRANSLATION LAYER ROUTING -->
+    <div id="google_translate_element" style="display:none;"></div>
+    
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
-                // Explicitly defining the 10 core global strategic languages
-                includedLanguages: 'en,ru,zh-CN,fr,el,ko,ja,hi,ar,es',
-                autoDisplay: true
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
             }, 'google_translate_element');
+        }
+        
+        // Secure execution node triggering translation dynamically via global window metrics
+        function executeAletheiaTranslation(languageCode) {
+            var googleSelectBlock = document.querySelector('.goog-te-combo');
+            if (googleSelectBlock) {
+                googleSelectBlock.value = languageCode;
+                // Dispatch native execution events to trick the underlying Google Engine
+                googleSelectBlock.dispatchEvent(new Event('change'));
+            }
         }
     </script>
     <script type="text/javascript" src="//://google.com"></script>
