@@ -19,7 +19,6 @@
         .brand { color: #ff7b72; font-weight: bold; }
         .footer { margin-top: 50px; font-size: 0.8em; color: #8b949e; text-align: center; border-top: 1px solid #21262d; padding-top: 20px; }
         
-        /* Premium Floating Translation Control Panel */
         .translate-container {
             background: #161b22;
             border: 1px solid #30363d;
@@ -39,7 +38,6 @@
             font-weight: bold;
         }
         
-        /* Custom Native Dropdown Styling Matching Windows 11 Fluent Design */
         .tethys-translate-select {
             background-color: #0d1117;
             color: #c9d1d9;
@@ -52,9 +50,7 @@
             outline: none;
             width: 220px;
         }
-        .tethys-translate-select:hover {
-            border-color: #58a6ff;
-        }
+        .tethys-translate-select:hover { border-color: #58a6ff; }
     </style>
 </head>
 <body>
@@ -62,70 +58,81 @@
     <!-- TETHYS LANGUAGE HUB SUBSYSTEM -->
     <div class="translate-container">
         <span class="translate-label">AI Aletheia Translation Node</span>
-        <select class="tethys-translate-select" id="tethysLanguageSelector" onchange="translatePageContent(this.value)">
-            <option value="">Select Language...</option>
+        <select class="tethys-translate-select" id="tethysLanguageSelector" onchange="switchTethysLanguage(this.value)">
             <option value="en">English (Default)</option>
             <option value="ru">Русский (Russian)</option>
             <option value="zh">中文 (Chinese)</option>
-            <option value="fr">Français (French)</option>
-            <option value="el">Ελληνικά (Greek)</option>
-            <option value="ko">한국어 (Korean)</option>
-            <option value="ja">日本語 (Japanese)</option>
-            <option value="hi">हिन्दी (Hindi)</option>
-            <option value="ar">العربية (Arabic)</option>
             <option value="es">Español (Spanish)</option>
         </select>
     </div>
 
-    <!-- TRANSLATABLE CORE CONTAINER -->
-    <div id="tethysContentArea">
-        <h1 data-origin="Project: Advanced Visual Analytics Environment">Project: Advanced Visual Analytics Environment</h1>
-        <p>Developed by: <span class="brand">AR Tethys & AI Aletheia Core</span></p>
-        <p>Status: Operational Phase 1 / Non-Financial Analytical Infrastructure</p>
+    <!-- MAIN TRANSLATABLE AREAS WITH STATIC ID LINKS -->
+    <h1 id="txt-title">Project: Advanced Visual Analytics Environment</h1>
+    <p><span id="txt-dev">Developed by:</span> <span class="brand">AR Tethys & AI Aletheia Core</span></p>
+    <p><span id="txt-status">Status: Operational Phase 1 / Non-Financial Analytical Infrastructure</span></p>
 
-        <h2 data-origin="1. Executive Summary & Legal Framework">1. Executive Summary & Legal Framework</h2>
-        <p data-origin="This technical interface operates strictly as an autonomous, user-driven analytical tool within licensed trading architectures under International Law frameworks. By eliminating centralized financial execution matrices, the system preserves 100% regulatory compliance across 193 UN member states, functioning exclusively as an author-driven algorithmic data router.">This technical interface operates strictly as an autonomous, user-driven analytical tool within licensed trading architectures under International Law frameworks. By eliminating centralized financial execution matrices, the system preserves 100% regulatory compliance across 193 UN member states, functioning exclusively as an author-driven algorithmic data router.</p>
+    <h2 id="txt-h1">1. Executive Summary & Legal Framework</h2>
+    <p id="txt-p1">This technical interface operates strictly as an autonomous, user-driven analytical tool within licensed trading architectures under International Law frameworks. By eliminating centralized financial execution matrices, the system preserves 100% regulatory compliance across 193 UN member states, functioning exclusively as an author-driven algorithmic data router.</p>
 
-        <h2 data-origin="2. System Integration Status">2. System Integration Status</h2>
-        <p data-origin="The core computational engine utilizes localized secure data piping channels (Named Pipes) within the Windows 11 kernel environment to bridge analytics without external network exposure. Memory structures are strictly constrained to a 384-bar processing window to ensure physical server protection and resource optimization.">The core computational engine utilizes localized secure data piping channels (Named Pipes) within the Windows 11 kernel environment to bridge analytics without external network exposure. Memory structures are strictly constrained to a 384-bar processing window to ensure physical server protection and resource optimization.</p>
-    </div>
+    <h2 id="txt-h2">2. System Integration Status</h2>
+    <p id="txt-p2">The core computational engine utilizes localized secure data piping channels (Named Pipes) within the Windows 11 kernel environment to bridge analytics without external network exposure. Memory structures are strictly constrained to a 384-bar processing window to ensure physical server protection and resource optimization.</p>
 
     <div class="footer">
         &copy; 2026 AR Tethys & AI Aletheia. All Rights Reserved. Protected under Global Author Algorithmic Frameworks.
     </div>
 
-    <!-- PURE DECENTRALIZED RUNTIME INTERPOLATION TRANSLATION ROUTING -->
+    <!-- IMMUTABLE STATIC DATA MATRIX TRANSLATION HUB -->
     <script type="text/javascript">
-        async function translatePageContent(targetLang) {
-            if (!targetLang) return;
-            
-            const elementsToTranslate = document.querySelectorAll('#tethysContentArea [data-origin]');
-            
-            for (let element of elementsToTranslate) {
-                const originalText = element.getAttribute('data-origin');
-                
-                if (targetLang === 'en') {
-                    element.innerHTML = originalText;
-                    continue;
-                }
-                
-                element.innerHTML = "Waking up AI Aletheia Node...";
-                
-                try {
-                    // Open matrix API route routing directly via autonomous memory node
-                    const apiURL = `https://translated.net{encodeURIComponent(originalText)}&langpair=en|${targetLang}`;
-                    const response = await fetch(apiURL);
-                    const data = await response.json();
-                    
-                    if (data && data.responseData) {
-                        element.innerHTML = data.responseData.translatedText;
-                    } else {
-                        element.innerHTML = originalText;
-                    }
-                } catch (error) {
-                    element.innerHTML = originalText;
-                }
+        const tethysLinguisticMatrix = {
+            en: {
+                title: "Project: Advanced Visual Analytics Environment",
+                dev: "Developed by:",
+                status: "Status: Operational Phase 1 / Non-Financial Analytical Infrastructure",
+                h1: "1. Executive Summary & Legal Framework",
+                p1: "This technical interface operates strictly as an autonomous, user-driven analytical tool within licensed trading architectures under International Law frameworks. By eliminating centralized financial execution matrices, the system preserves 100% regulatory compliance across 193 UN member states, functioning exclusively as an author-driven algorithmic data router.",
+                h2: "2. System Integration Status",
+                p2: "The core computational engine utilizes localized secure data piping channels (Named Pipes) within the Windows 11 kernel environment to bridge analytics without external network exposure. Memory structures are strictly constrained to a 384-bar processing window to ensure physical server protection and resource optimization."
+            },
+            ru: {
+                title: "Проект: Расширенная среда визуальной аналитики",
+                dev: "Разработано:",
+                status: "Статус: Операционная Фаза 1 / Нефинансовая аналитическая инфраструктура",
+                h1: "1. Исполнительный регламент и правовая база",
+                p1: "Этот технический интерфейс работает строго как автономный, управляемый пользователем аналитический инструмент в рамках лицензированных торговых архитектур в соответствии с принципами международного права. Убирая централизованные матрицы исполнения финансовых операций, система сохраняет 100% нормативное соответствие во всех 193 государствах-членах ООН, функционируя исключительно как управляемый автором алгоритмический маршрутизатор данных.",
+                h2: "2. Статус интеграции системы",
+                p2: "Основной вычислительный движок использует локализованные защищенные каналы передачи данных (Named Pipes) внутри среды ядра Windows 11 для связи аналитики без внешнего сетевого воздействия. Структуры памяти строго ограничены окном обработки в 384 бара для обеспечения физической защиты серверов и оптимизации ресурсов."
+            },
+            zh: {
+                title: "项目：高级视觉分析环境",
+                dev: "开发团队：",
+                status: "状态：运行第一阶段 / 非金融分析基础设施",
+                h1: "1. 执行摘要与法律框架",
+                p1: "该技术接口严格作为国际法框架下许可交易架构内的自主、用户驱动的分析工具运行。通过消除集中式金融执行矩阵，系统在 193 个联合国成员国中保持 100% 的合规性，完全作为作者驱动的算法数据 night 路由运行。",
+                h2: "2. 系统集成状态",
+                p2: "核心计算引擎利用 Windows 11 内核环境中的本地安全数据管道通道（命名管道）来桥接分析，无需外部网络暴露。内存结构严格限制在 384 柱的处理窗口内，以确保物理服务器保护和资源优化。"
+            },
+            es: {
+                title: "Proyecto: Entorno de Análisis Visual Avanzado",
+                dev: "Desarrollado por:",
+                status: "Estado: Fase Operativa 1 / Infraestructura Analítica No Financiera",
+                h1: "1. Resumen Ejecutivo y Marco Legal",
+                p1: "Esta interfaz técnica opera estrictamente como una herramienta analítica autónoma e impulsada por el usuario dentro de arquitecturas comerciales autorizadas bajo los marcos del Derecho Internacional. Al eliminar las matrices de ejecución financiera centralizadas, el sistema preserva el 100% del cumplimiento regulatorio en los 193 estados miembros de la ONU, funcionando exclusivamente como un enrutador de datos algorítmico impulsado por el autor.",
+                h2: "2. Estado de Integración del Sistema",
+                p2: "El motor de computación central utiliza canales de tuberías de datos seguros y localizados (Named Pipes) dentro del entorno del kernel de Windows 11 para conectar análisis sin exposición a redes externas. Las estructuras de memoria están estrictamente limitadas a una ventana de procesamiento de 384 barras para garantizar la protección del servidor físico y la optimización de recursos."
             }
+        };
+
+        function switchTethysLanguage(langCode) {
+            const dictionary = tethysLinguisticMatrix[langCode];
+            if (!dictionary) return;
+
+            document.getElementById('txt-title').innerHTML = dictionary.title;
+            document.getElementById('txt-dev').innerHTML = dictionary.dev;
+            document.getElementById('txt-status').innerHTML = dictionary.status;
+            document.getElementById('txt-h1').innerHTML = dictionary.h1;
+            document.getElementById('txt-p1').innerHTML = dictionary.p1;
+            document.getElementById('txt-h2').innerHTML = dictionary.h2;
+            document.getElementById('txt-p2').innerHTML = dictionary.p2;
         }
     </script>
 
