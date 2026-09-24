@@ -293,45 +293,52 @@
         };
 
     </script>
-<!-- ==================================================================== -->
-<!-- SHEET 08: PLATFORM LOGIC CONTROL SCRIPT & CLOSING MARKS              -->
-<!-- ==================================================================== -->
-    <script type="text/javascript">
-        function switchTethysLanguage(langCode) {
-            // Guard clause to protect mathematical logic integrity
-            if (!window.tethysLinguisticMatrix || !window.tethysLinguisticMatrix[langCode]) return;
-            
-            const node = window.tethysLinguisticMatrix[langCode];
-            
-            // Cascade content binding into the DOM structure safely
-            document.getElementById("txt-title").innerText = node.title;
-            document.getElementById("txt-dev").innerText = node.dev;
-            document.getElementById("txt-status").innerText = node.status;
-            
-            document.getElementById("txt-h1").innerText = node.h1;
-            document.getElementById("txt-p1").innerText = node.p1;
-            
-            document.getElementById("txt-h2").innerText = node.h2;
-            document.getElementById("txt-p2").innerText = node.p2;
-            
-            document.getElementById("txt-h3").innerText = node.h3;
-            document.getElementById("txt-p3_1").innerText = node.p3_1;
-            document.getElementById("txt-p3_2").innerText = node.p3_2;
-            
-            document.documentElement.lang = langCode;
-        }
+// ==================================================================== 
+// SHEET 08: PLATFORM LOGIC CONTROL SCRIPT & CLOSING MARKS              
+// ==================================================================== 
+function switchTethysLanguage(langCode) {
+    // Guard clause to protect mathematical logic integrity
+    if (!window.tethysLinguisticMatrix || !window.tethysLinguisticMatrix[langCode]) return;
+    
+    const node = window.tethysLinguisticMatrix[langCode];
+    
+    // Cascade content binding into the DOM structure safely
+    document.getElementById("txt-title").innerText = node.title;
+    document.getElementById("txt-dev").innerText = node.dev;
+    document.getElementById("txt-status").innerText = node.status;
+    
+    document.getElementById("txt-h1").innerText = node.h1;
+    document.getElementById("txt-p1").innerText = node.p1;
+    
+    document.getElementById("txt-h2").innerText = node.h2;
+    document.getElementById("txt-p2").innerText = node.p2;
+    
+    document.getElementById("txt-h3").innerText = node.h3;
+    document.getElementById("txt-p3_1").innerText = node.p3_1;
+    document.getElementById("txt-p3_2").innerText = node.p3_2;
+    
+    document.documentElement.lang = langCode;
+    
+    // Save user preference into persistent storage
+    localStorage.setItem('tethys_lang', langCode);
+}
 
-        // Autonomous Lifecycle Initialization
-        window.addEventListener('DOMContentLoaded', () => {
-            // Force interface to render via verified Russian layout on load
-            switchTethysLanguage('ru');
-            
-            // Sync selection indicator in the static DOM selector element
-            const selector = document.getElementById("tethysLanguageSelector");
-            if (selector) {
-                selector.value = 'ru';
-            }
-        });
-    </script>
-</body>
-</html>
+// Autonomous Lifecycle Initialization (STABILIZED FOR ENGLISH DEFAULT)
+window.addEventListener('DOMContentLoaded', () => {
+    // 1. Query safe storage context, completely bypassing automatic browser sniffing
+    let defaultLang = localStorage.getItem('tethys_lang');
+    
+    // 2. Enforcement Gate: If no previous choice exists, force strict English launch state
+    if (!defaultLang || defaultLang === "") {
+        defaultLang = 'en';
+    }
+    
+    // 3. Fire the execution routing pipeline
+    switchTethysLanguage(defaultLang);
+    
+    // 4. Sync selection indicator in the static DOM selector element
+    const selector = document.getElementById("tethysLanguageSelector");
+    if (selector) {
+        selector.value = defaultLang;
+    }
+});
