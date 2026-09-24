@@ -294,45 +294,40 @@
         };
 
     </script>
-// ==================================================================== 
-// SHEET 08: PLATFORM LOGIC CONTROL SCRIPT & CLOSING MARKS              
-// ==================================================================== 
-    <script type="text/javascript">
-        function switchTethysLanguage(langCode) {
-            // Structural guard clause to protect matrix integrity
-            if (!window.tethysLinguisticMatrix || !window.tethysLinguisticMatrix[langCode]) return;
-            
-            const node = window.tethysLinguisticMatrix[langCode];
-            
-            // Core content routing cascade matching your exact original DOM structure
-            document.getElementById("txt-title").innerText = node.title;
-            document.getElementById("txt-dev").innerText = node.dev;
-            document.getElementById("txt-status").innerText = node.status;
-            
-            document.getElementById("txt-h1").innerText = node.h1;
-            document.getElementById("txt-p1").innerText = node.p1;
-            
-            document.getElementById("txt-h2").innerText = node.h2;
-            document.getElementById("txt-p2").innerText = node.p2;
-            
-            document.getElementById("txt-h3").innerText = node.h3;
-            document.getElementById("txt-p3_1").innerText = node.p3_1;
-            document.getElementById("txt-p3_2").innerText = node.p3_2;
-            
-            document.documentElement.lang = langCode;
-        }
+<!-- ==================================================================== -->
+<!-- SHEET 08: PLATFORM LOGIC CONTROL SCRIPT & CLOSING MARKS              -->
+<!-- ==================================================================== -->
+<script type="text/javascript">
+    function switchTethysLanguage(langCode) {
+        if (!window.tethysLinguisticMatrix || !window.tethysLinguisticMatrix[langCode]) return;
+        
+        const node = window.tethysLinguisticMatrix[langCode];
+        
+        document.getElementById("txt-title").innerText = node.title;
+        document.getElementById("txt-dev").innerText = node.dev;
+        document.getElementById("txt-status").innerText = node.status;
+        
+        document.getElementById("txt-h1").innerText = node.h1;
+        document.getElementById("txt-p1").innerText = node.p1;
+        
+        document.getElementById("txt-h2").innerText = node.h2;
+        document.getElementById("txt-p2").innerText = node.p2;
+        
+        document.getElementById("txt-h3").innerText = node.h3;
+        document.getElementById("txt-p3_1").innerText = node.p3_1;
+        document.getElementById("txt-p3_2").innerText = node.p3_2;
+        
+        document.documentElement.lang = langCode;
+    }
 
-        // Autonomous Interface Initialization Entry Point
-        window.addEventListener('DOMContentLoaded', () => {
-            // STRICT CORE ENFORCEMENT: Force verified pure English layout on load sequence
-            switchTethysLanguage('en');
-            
-            // Synchronize selection indicator arrow in the internal selector element
-            const selector = document.getElementById("tethysLanguageSelector");
-            if (selector) {
-                selector.value = 'en';
-            }
-        });
-    </script>
+    window.addEventListener('DOMContentLoaded', () => {
+        switchTethysLanguage('en');
+        
+        const selector = document.getElementById("tethysLanguageSelector");
+        if (selector) {
+            selector.value = 'en';
+        }
+    });
+</script>
 </body>
 </html>
