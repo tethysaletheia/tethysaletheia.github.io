@@ -299,46 +299,54 @@
 // SHEET 08: PLATFORM LOGIC CONTROL SCRIPT & CLOSING MARKS              
 // ==================================================================== 
 function switchTethysLanguage(langCode) {
-    // Guard clause to protect mathematical logic integrity
+    // Core structural guard clause to prevent matrix memory leaks
     if (!window.tethysLinguisticMatrix || !window.tethysLinguisticMatrix[langCode]) return;
     
     const node = window.tethysLinguisticMatrix[langCode];
     
-    // Cascade content binding into the DOM structure safely
-    document.getElementById("txt-title").innerText = node.title;
-    document.getElementById("txt-dev").innerText = node.dev;
-    document.getElementById("txt-status").innerText = node.status;
+    // Internal cascade router updates DOM elements text safely
+    if (document.getElementById("txt-title"))  document.getElementById("txt-title").innerText = node.title;
+    if (document.getElementById("txt-dev"))    document.getElementById("txt-dev").innerText = node.dev;
+    if (document.getElementById("txt-status")) document.getElementById("txt-status").innerText = node.status;
     
-    document.getElementById("txt-h1").innerText = node.h1;
-    document.getElementById("txt-p1").innerText = node.p1;
+    if (document.getElementById("txt-h1"))     document.getElementById("txt-h1").innerText = node.h1;
+    if (document.getElementById("txt-p1"))     document.getElementById("txt-p1").innerText = node.p1;
     
-    document.getElementById("txt-h2").innerText = node.h2;
-    document.getElementById("txt-p2").innerText = node.p2;
+    if (document.getElementById("txt-h2"))     document.getElementById("txt-h2").innerText = node.h2;
+    if (document.getElementById("txt-p2"))     document.getElementById("txt-p2").innerText = node.p2;
     
-    document.getElementById("txt-h3").innerText = node.h3;
-    document.getElementById("txt-p3_1").innerText = node.p3_1;
-    document.getElementById("txt-p3_2").innerText = node.p3_2;
+    if (document.getElementById("txt-h3"))     document.getElementById("txt-h3").innerText = node.h3;
+    if (document.getElementById("txt-p3_1"))   document.getElementById("txt-p3_1").innerText = node.p3_1;
+    
+    // Secure fallback interceptor for paragraph 3.2
+    const p3_2_element = document.getElementById("txt-p3_2");
+    if (p3_2_element && node.p3_2) {
+        p3_2_element.innerText = node.p3_2;
+    } else if (p3_2_element && !node.p3_2) {
+        // Fallback to static HTML value if current node matrix definition is blank
+        p3_2_element.innerText = window.tethysLinguisticMatrix.en.p3_2;
+    }
     
     document.documentElement.lang = langCode;
     
-    // Save user preference into persistent storage
+    // Write choice directly to localized storage data buffer
     localStorage.setItem('tethys_lang', langCode);
 }
 
-// Autonomous Lifecycle Initialization (STABILIZED FOR ENGLISH DEFAULT)
+// Autonomous Linguistic Core Lifecycle Initialization Pipeline
 window.addEventListener('DOMContentLoaded', () => {
-    // 1. Query safe storage context, completely bypassing automatic browser sniffing
+    // Extract client layout historical trace data
     let defaultLang = localStorage.getItem('tethys_lang');
     
-    // 2. Enforcement Gate: If no previous choice exists, force strict English launch state
-    if (!defaultLang || defaultLang === "") {
+    // STRICT IMPERIAL ROUTING GATEWAY: Force pure English start for new sessions
+    if (defaultLang === null || defaultLang === undefined || defaultLang === "") {
         defaultLang = 'en';
     }
     
-    // 3. Fire the execution routing pipeline
+    // Fire the internal decentralized translation node logic
     switchTethysLanguage(defaultLang);
     
-    // 4. Sync selection indicator in the static DOM selector element
+    // Synchronize UI dropdown list selection arrow on viewport render
     const selector = document.getElementById("tethysLanguageSelector");
     if (selector) {
         selector.value = defaultLang;
